@@ -1,91 +1,226 @@
-# Magic Portfolio
+# Keshav Mishra - Portfolio
 
-Magic Portfolio is a simple, clean, beginner-friendly portfolio template. It supports an MDX-based content system for projects and blog posts, an about / CV page and a gallery.
+A professional portfolio showcasing my work as an LLM and ML Engineer, built with Once UI and Next.js. Features include project case studies, technical blog posts, and an interactive CV.
 
-View the demo [here](https://demo.magic-portfolio.com).
+![Portfolio Preview](public/images/og/home.jpg)
 
-![Magic Portfolio](public/images/og/home.jpg)
+## About
 
-## Getting started
+This portfolio highlights my expertise in:
+- **LLM Engineering**: Building autonomous agents, RAG systems, and production LLM applications
+- **MLOps**: End-to-end ML pipelines, AutoML platforms, and model deployment
+- **Predictive Analytics**: Machine learning for industrial applications and predictive maintenance
+- **Open Source**: Published libraries on PyPI and npm for the AI community
+
+## Featured Projects
+
+1. **Genie Code Generation Platform** - LLM-driven agent scaffolding platform
+2. **RAG Chatbot for Oil & Gas** - GPT-4 powered technical documentation assistant
+3. **Text2SQL2Plot Agent** - Natural language to SQL with automated visualization
+4. **AutoML Platform** - End-to-end automated ML pipeline with MLOps
+5. **Turbomachinery Failure Prediction** - 96.5% accurate predictive maintenance system
+
+## Tech Stack
+
+- **Framework**: Next.js 14 (App Router)
+- **UI Library**: Once UI Core
+- **Styling**: CSS Modules + Once UI theming system
+- **Content**: MDX for blog posts and project case studies
+- **Deployment**: Vercel
+
+## Getting Started
 
 **1. Clone the repository**
-```
-git clone https://github.com/once-ui-system/magic-portfolio.git
+```bash
+git clone https://github.com/keshav1998/magic-portfolio.git
+cd magic-portfolio
 ```
 
 **2. Install dependencies**
-```
+```bash
 npm install
 ```
 
-**3. Run dev server**
-```
+**3. Run development server**
+```bash
 npm run dev
 ```
 
-**4. Edit config**
-```
-src/resources/once-ui.config.js
+Open [http://localhost:3000](http://localhost:3000) to view the portfolio.
+
+**4. Build for production**
+```bash
+npm run build
+npm start
 ```
 
-**5. Edit content**
+## Project Structure
+
 ```
-src/resources/content.js
+magic-portfolio/
+├── src/
+│   ├── app/
+│   │   ├── page.tsx              # Home page
+│   │   ├── about/page.tsx        # About/CV page
+│   │   ├── work/
+│   │   │   ├── page.tsx          # Projects listing
+│   │   │   └── projects/         # MDX project files
+│   │   └── blog/
+│   │       ├── page.tsx          # Blog listing
+│   │       └── posts/            # MDX blog posts
+│   ├── components/               # React components
+│   └── resources/
+│       ├── content.tsx           # Content configuration
+│       └── once-ui.config.ts     # Theme configuration
+├── public/
+│   └── images/                   # Images and assets
+└── package.json
 ```
 
-**6. Create blog posts / projects**
+## Customization
+
+### Content Configuration
+
+Edit `src/resources/content.tsx` to update:
+- Personal information
+- Work experience
+- Technical skills
+- Social links
+- Page content
+
+### Theme Configuration
+
+Edit `src/resources/once-ui.config.ts` to customize:
+- Color scheme (dark/light/system)
+- Brand colors
+- Typography
+- Border styles
+- Visual effects
+
+### Adding Projects
+
+Create a new `.mdx` file in `src/app/work/projects/`:
+
+```mdx
+---
+title: "Project Title"
+publishedAt: "2024-01-01"
+summary: "Brief project description"
+images:
+  - "/images/projects/project-name/cover.jpg"
+team:
+  - name: "Your Name"
+    role: "Your Role"
+    avatar: "/images/avatar.jpg"
+---
+
+## Project content here...
 ```
-Add a new .mdx file to src/app/blog/posts or src/app/work/projects
+
+### Adding Blog Posts
+
+Create a new `.mdx` file in `src/app/blog/posts/`:
+
+```mdx
+---
+title: "Blog Post Title"
+publishedAt: "2024-01-01"
+summary: "Brief post description"
+author: "Your Name"
+---
+
+## Blog content here...
 ```
-
-Magic Portfolio was built with [Once UI](https://once-ui.com) for [Next.js](https://nextjs.org). It requires Node.js v18.17+.
-
-## Documentation
-
-Docs available at: [docs.once-ui.com](https://docs.once-ui.com/docs/magic-portfolio/quick-start)
 
 ## Features
 
-### Once UI
-- All tokens, components & features of [Once UI](https://once-ui.com)
+### Once UI Integration
+- 100+ production-ready components
+- Comprehensive theming system
+- Responsive design out of the box
+- Accessibility-first approach
 
-### SEO
-- Automatic open-graph and X image generation with next/og
-- Automatic schema and metadata generation based on the content file
+### SEO Optimized
+- Automatic Open Graph image generation
+- Dynamic metadata based on content
+- Structured data (Schema.org)
+- Sitemap and robots.txt
 
-### Design
-- Responsive layout optimized for all screen sizes
-- Timeless design without heavy animations and motion
-- Endless customization options through [data attributes](https://once-ui.com/docs/theming)
+### Performance
+- Server-side rendering with Next.js
+- Optimized images with next/image
+- Minimal JavaScript bundle
+- Fast page loads
 
-### Content
-- Render sections conditionally based on the content file
-- Enable or disable pages for blog, work, gallery and about / CV
-- Generate and display social links automatically
-- Set up password protection for URLs
+### Content Management
+- MDX for rich content with React components
+- Syntax highlighting for code blocks
+- Responsive images and media
+- Easy content updates without code changes
 
-### Localization
-- A localized, earlier version of Magic Portfolio is available with the next-intl library
-- To use localization, switch to the 'i18n' branch
+## Environment Variables
 
-## Creators
+Create a `.env.local` file for optional features:
 
-Lorant One: [Threads](https://www.threads.net/@lorant.one) / [LinkedIn](https://www.linkedin.com/in/lorant-one/)
+```env
+# Password protection (optional)
+PASSWORD=your_secure_password
 
-## Get involved
+# Analytics (optional)
+NEXT_PUBLIC_GA_ID=your_google_analytics_id
+```
 
-- Join the Design Engineers Club on [Discord](https://discord.com/invite/5EyAQ4eNdS) and share your project with us!
-- Deployed your docs? Share it on the [Once UI Hub](https://once-ui.com/hub) too! We feature our favorite apps on our landing page.
+## Deployment
+
+### Deploy to Vercel (Recommended)
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fkeshav1998%2Fmagic-portfolio)
+
+1. Click the button above
+2. Connect your GitHub account
+3. Configure environment variables (if needed)
+4. Deploy!
+
+### Manual Deployment
+
+```bash
+npm run build
+npm start
+```
+
+Deploy the `.next` folder to any Node.js hosting provider.
+
+## Documentation
+
+- [Once UI Documentation](https://docs.once-ui.com)
+- [Magic Portfolio Guide](https://docs.once-ui.com/products/magic-portfolio/quick-start)
+- [Next.js Documentation](https://nextjs.org/docs)
+
+## Connect
+
+- **Email**: [me@kmsh.dev](mailto:me@kmsh.dev)
+- **LinkedIn**: [linkedin.com/in/keshav98](https://www.linkedin.com/in/keshav98)
+- **GitHub**: [github.com/keshav1998](https://github.com/keshav1998)
+
+## Open Source Contributions
+
+- **genie-cli** (PyPI): LLM-powered agent scaffolding platform
+- **plugin-memeooorr** (npm): Meme-centric agent plugin
+- **agents-fun-eliza**: Autonomous conversational agent framework
 
 ## License
 
-Distributed under the CC BY-NC 4.0 License.
-- Attribution is required.
-- Commercial usage is not allowed.
-- You can extend the license to [Dopler CC](https://dopler.app/license) by purchasing a [Once UI Pro](https://once-ui.com/pricing) license.
+This portfolio is built on the Magic Portfolio template by Once UI.
 
-See `LICENSE.txt` for more information.
+**Template License**: CC BY-NC 4.0
+- Attribution required
+- Personal use allowed
+- Commercial use requires [Once UI Pro](https://once-ui.com/pricing)
 
-## Deploy with Vercel
+**Content License**: All project descriptions, blog posts, and personal content © 2025 Keshav Mishra
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fonce-ui-system%2Fmagic-portfolio&project-name=portfolio&repository-name=portfolio&redirect-url=https%3A%2F%2Fgithub.com%2Fonce-ui-system%2Fmagic-portfolio&demo-title=Magic%20Portfolio&demo-description=Showcase%20your%20designers%20or%20developer%20portfolio&demo-url=https%3A%2F%2Fdemo.magic-portfolio.com&demo-image=%2F%2Fraw.githubusercontent.com%2Fonce-ui-system%2Fmagic-portfolio%2Fmain%2Fpublic%2Fimages%2Fog%2Fhome.jpg)
+## Acknowledgments
+
+Built with [Once UI](https://once-ui.com) and [Next.js](https://nextjs.org).
+
+Template created by [Lorant One](https://www.linkedin.com/in/lorant-one/).

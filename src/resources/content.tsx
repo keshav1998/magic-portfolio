@@ -1,49 +1,34 @@
-import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
+import { Person, Social, Home, About, Blog, Work, Newsletter, Gallery } from "@/types";
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
+  firstName: "Keshav",
+  lastName: "Mishra",
+  name: `Keshav Mishra`,
+  role: "LLM and ML Engineer",
   avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  email: "me@kmsh.dev",
+  location: "Asia/Kolkata",
+  languages: ["English", "Hindi"],
 };
 
 const newsletter: Newsletter = {
-  display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>My weekly newsletter about creativity and engineering</>,
+  display: false,
+  title: <></>,
+  description: <></>,
 };
 
 const social: Social = [
-  // Links are automatically displayed.
-  // Import new icons in /once-ui/icons.ts
-  // Set essentials: true for links you want to show on the about page
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/once-ui-system",
+    link: "https://github.com/keshav1998",
     essential: true,
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
-    essential: true,
-  },
-  {
-    name: "Instagram",
-    icon: "instagram",
-    link: "https://www.instagram.com/once_ui/",
-    essential: false,
-  },
-  {
-    name: "Threads",
-    icon: "threads",
-    link: "https://www.threads.com/@once_ui",
+    link: "https://www.linkedin.com/in/keshav98",
     essential: true,
   },
   {
@@ -60,24 +45,37 @@ const home: Home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  headline: <>Building autonomous agents and LLM-powered systems</>,
   featured: {
     display: true,
     title: (
       <Row gap="12" vertical="center">
-        <strong className="ml-4">Once UI</strong>{" "}
+        <strong className="ml-4">Genie Platform</strong>{" "}
         <Line background="brand-alpha-strong" vert height="20" />
         <Text marginRight="4" onBackground="brand-medium">
           Featured work
         </Text>
       </Row>
     ),
-    href: "/work/building-once-ui-a-customizable-design-system",
+    href: "/work/genie-code-generation",
   },
   subline: (
     <>
-    I'm Selene, a design engineer at <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
-</>
+      I'm Keshav, an LLM and ML Engineer specializing in{" "}
+      <Text as="span" size="xl" weight="strong">
+        autonomous agents
+      </Text>
+      ,{" "}
+      <Text as="span" size="xl" weight="strong">
+        prompt engineering
+      </Text>
+      , and{" "}
+      <Text as="span" size="xl" weight="strong">
+        open-source AI tooling
+      </Text>
+      . <br />I architect production-grade LLM applications that transform complex
+      workflows into intelligent automation.
+    </>
   ),
 };
 
@@ -85,69 +83,117 @@ const about: About = {
   path: "/about",
   label: "About",
   title: `About – ${person.name}`,
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  description: `Meet ${person.name}, ${person.role}`,
   tableOfContent: {
     display: true,
-    subItems: false,
+    subItems: true,
   },
   avatar: {
     display: true,
   },
   calendar: {
-    display: true,
-    link: "https://cal.com",
+    display: false,
+    link: "",
   },
   intro: {
     display: true,
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Innovative LLM and ML Engineer with 5+ years of experience across retail,
+        finance, oil & gas, and health/insurance NLP. Specialized in building
+        autonomous agents, large language model applications, and open-source AI
+        tooling. Seeking full-time roles focused on generative AI, LLM product
+        engineering, and next-generation NLP systems in dynamic, impact-driven teams.
       </>
     ),
   },
   work: {
-    display: true, // set to false to hide this section
+    display: true,
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Valory",
+        timeframe: "April 2024 - July 2025",
+        role: "Lead LLM Engineer, Autonomous Agent Platforms",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Conceived, architected, and implemented <strong>Genie</strong>, Valory's
+            flagship LLM-driven code generation and agent scaffolding platform—an
+            industry-first system enabling autonomous agent and service creation from
+            natural language.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Directly reduced agent/service prototyping time from weeks to minutes,
+            democratizing autonomous agent development for both technical and
+            non-technical users.
+          </>,
+          <>
+            Architected and developed <strong>agents-fun-eliza</strong>, an autonomous
+            agent for the Agents.fun ecosystem, leveraging the Eliza framework to
+            deliver fully open-sourced, interactive, and extensible conversational
+            agents.
+          </>,
+          <>
+            Published and maintained <strong>plugin-memeooorr</strong>—a
+            TypeScript-based open-source package, released on npm, enabling meme-centric
+            agent extensions and community creativity.
+          </>,
+          <>
+            Engineered robust LLM prompt engineering pipelines, enabling
+            semantic-to-formal translation for agent behaviors and FSMs, with feedback
+            loops and error handling for high-reliability code generation.
+          </>,
+          <>
+            Enhanced agent orchestration and deployment pipelines using containerization
+            (Docker/Kubernetes), CI/CD, MLflow, and best MLOps practices—delivering
+            reproducible, secure, and scalable agent workflows.
           </>,
         ],
-        images: [
-          // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "Mechademy Engineering Solutions",
+        timeframe: "Feb 2020 - March 2024",
+        role: "LLM and MLOps Engineer",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Developed a <strong>RAG Agent</strong> for on-field agents to access and
+            retrieve maintenance logs, servicing records, and critical equipment data
+            on-demand.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Developed a <strong>Text2SQL2Plot LLM agent</strong> for field workers in
+            turbomachinery plants using Vanna.ai and GPT-4o-mini, reducing repair time
+            by 20%.
+          </>,
+          <>
+            Fabricated end-to-end <strong>AutoML</strong> that auto tracks, hypertunes,
+            deploys models saving 100+ hrs monthly work.
+          </>,
+          <>
+            Built a <strong>LLM Role Assistant</strong> tool based on internal alerts
+            data with LangChain & GPT-4 saving 200+ man hours monthly, which performs
+            work equal to 4 team members of alert management team.
+          </>,
+          <>
+            Pioneered a <strong>RAG based LLM chatbot</strong> using GPT-4 and
+            LlamaIndex, that allows user to interact with bot that has access to latest
+            developments in Energy, Oil and Gas fields, that is directly client facing
+            for big Oil and Gas Clients.
+          </>,
+          <>
+            Built an in-house <strong>MLOps platform</strong> utilizing drift detection,
+            MLflow, automated model training, that reduced modeling related workload by
+            70%.
+          </>,
+          <>
+            Trained <strong>Mistral 7B model</strong> using on-premise data of alerts
+            utilizing a distributed framework that can scale to large datasets.
+          </>,
+          <>
+            Led a team of data scientists in developing a ML model that predicted the
+            failure of turbomachinery with <strong>96.5% accuracy</strong>.
           </>,
         ],
         images: [],
@@ -155,78 +201,89 @@ const about: About = {
     ],
   },
   studies: {
-    display: true, // set to false to hide this section
-    title: "Studies",
+    display: true,
+    title: "Education",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
-      },
-      {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "GGSIPU",
+        description: (
+          <>
+            B.E. Computer Science (2016 - 2020) • GPA: 8.1 • Winner at Smart India
+            Hackathon 2018, AICTE
+          </>
+        ),
       },
     ],
   },
   technical: {
-    display: true, // set to false to hide this section
-    title: "Technical skills",
+    display: true,
+    title: "Technical Skills",
     skills: [
       {
-        title: "Figma",
+        title: "LLM Engineering",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+          <>
+            Expert in prompt engineering, RAG (Retrieval-Augmented Generation), agent
+            orchestration, and semantic-to-formal translation for autonomous systems.
+          </>
         ),
         tags: [
-          {
-            name: "Figma",
-            icon: "figma",
-          },
+          { name: "LangChain", icon: "" },
+          { name: "DSPy", icon: "" },
+          { name: "LlamaIndex", icon: "" },
+          { name: "Langflow", icon: "" },
+          { name: "HuggingFace", icon: "" },
         ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
+        images: [],
       },
       {
-        title: "Next.js",
+        title: "MLOps & Infrastructure",
         description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+          <>
+            Building production-grade ML systems with CI/CD, drift detection, AutoML,
+            and containerized deployment at scale.
+          </>
         ),
         tags: [
-          {
-            name: "JavaScript",
-            icon: "javascript",
-          },
-          {
-            name: "Next.js",
-            icon: "nextjs",
-          },
-          {
-            name: "Supabase",
-            icon: "supabase",
-          },
+          { name: "MLflow", icon: "" },
+          { name: "Docker", icon: "" },
+          { name: "Kubernetes", icon: "" },
+          { name: "DevOps", icon: "" },
         ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
+        images: [],
+      },
+      {
+        title: "Programming & Cloud",
+        description: (
+          <>
+            Full-stack AI development in Python, TypeScript, and Rust, with expertise in
+            AWS, SQL, MongoDB, and Redis.
+          </>
+        ),
+        tags: [
+          { name: "Python", icon: "python" },
+          { name: "TypeScript", icon: "typescript" },
+          { name: "Rust", icon: "" },
+          { name: "AWS", icon: "" },
+          { name: "SQL", icon: "" },
         ],
+        images: [],
+      },
+      {
+        title: "Data Science & ML",
+        description: (
+          <>
+            Advanced expertise in NLP, time series analysis, statistics, and machine
+            learning frameworks like XGBoost and scikit-learn.
+          </>
+        ),
+        tags: [
+          { name: "NLP", icon: "" },
+          { name: "XGBoost", icon: "" },
+          { name: "Statistics", icon: "" },
+          { name: "Time Series", icon: "" },
+        ],
+        images: [],
       },
     ],
   },
@@ -235,70 +292,23 @@ const about: About = {
 const blog: Blog = {
   path: "/blog",
   label: "Blog",
-  title: "Writing about design and tech...",
+  title: "Writing about AI and engineering...",
   description: `Read what ${person.name} has been up to recently`,
-  // Create new blog posts by adding a new .mdx file to app/blog/posts
-  // All posts will be listed on the /blog route
 };
 
 const work: Work = {
   path: "/work",
   label: "Work",
   title: `Projects – ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
-  // All projects will be listed on the /home and /work routes
+  description: `LLM and ML projects by ${person.name}`,
 };
 
 const gallery: Gallery = {
   path: "/gallery",
   label: "Gallery",
-  title: `Photo gallery – ${person.name}`,
-  description: `A photo collection by ${person.name}`,
-  // Images by https://lorant.one
-  // These are placeholder images, replace with your own
-  images: [
-    {
-      src: "/images/gallery/horizontal-1.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-4.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-3.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-1.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/vertical-2.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/horizontal-2.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/horizontal-4.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-3.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-  ],
+  title: "Gallery",
+  description: "Photo gallery",
+  images: [],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+export { person, social, home, about, blog, work, gallery, newsletter };
